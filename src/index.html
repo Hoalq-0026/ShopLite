@@ -10,7 +10,7 @@
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <a href="#" class="logo">ShopLite</a>
+            <a href="./index.html" class="logo">ShopLite</a>
 
             <form class="search-form" aria-label="Tìm kiếm sản phẩm">
                 <input type="search" placeholder="Tìm sản phẩm..." aria-label="Tìm sản phẩm"/>
@@ -81,15 +81,18 @@
                 productCard.classList.add('product-card');
 
                 productCard.innerHTML = `
-                    <img
-                        class="product-image"
-                        src="${product.thumbnail}"
-                        alt="${product.title}"
-                    />
+                    <a href="./product.html" class="product-link">
+                        <img
+                            class="product-image"
+                            src="${product.thumbnail}"
+                            alt="${product.title}"
+                        />
+                    </a>
                     <div class="product-info">
                         <h2>${product.title}</h2>
                         <p class="product-price">$${product.price}</p>
                         <p class="product-description">${product.description}</p>
+                        <button class="add-cart-button" type="button">Thêm vào giỏ</button>
                     </div>
                 `;
                 productsGrid.appendChild(productCard);

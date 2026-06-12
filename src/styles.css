@@ -57,7 +57,7 @@ input {
     align-items: center;
 }
 
-.search-forom input {
+.search-form input {
     width: 100%;
     max-width: 480px;
     height: 44px;
@@ -96,7 +96,8 @@ input {
     line-height: 20px;
 }
 
-.product-section {
+.products-section,
+.product-detail-section {
     padding: 48px 0;
 }
 
@@ -115,15 +116,22 @@ input {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 24px;
 }
 
 .product-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     overflow: hidden;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     background: #ffffff;
+}
+
+.product-link {
+    display: block;
 }
 
 .product-image {
@@ -145,6 +153,9 @@ input {
 }
 
 .product-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     padding: 16px;
 }
 
@@ -160,9 +171,81 @@ input {
 }
 
 .product-description {
+    margin-bottom: 16px;
     color: #6b7280;
     font-size: 14px;
     line-height: 1.5;
+}
+
+.add-cart-button {
+    margin-top: auto;
+    min-height: 44px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.add-cart-button:hover {
+    background: #1d4ed8;
+}
+
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    gap: 40px;
+    align-items: start;
+}
+
+.product-detail-image {
+    overflow: hidden;
+    border-radius: 8px;
+    background: #e5e7eb;
+}
+
+.product-detail-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.product-detail-info {
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.breadcrumb {
+    margin-bottom: 16px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.product-detail-info h1 {
+    margin-bottom: 12px;
+    font-size: 36px;
+    line-height: 1.15;
+}
+
+.detail-price {
+    margin-bottom: 18px;
+    color: #2563eb;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.detail-description {
+    margin-bottom: 24px;
+    color: #4b5563;
+    line-height: 1.7;
+}
+
+.detail-button {
+    width: 100%;
 }
 
 .site-footer {
@@ -188,12 +271,6 @@ input {
     color: #2563eb;
 }
 
-@media (max-width: 900px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 640px) {
     .header-inner {
         flex-wrap: wrap;
@@ -205,7 +282,7 @@ input {
         flex-basis: 100%;
     }
 
-    .products-grid {
+    .product-detail-grid {
         grid-template-columns: 1fr;
     }
 
